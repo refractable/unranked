@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/unranked.dir/src/main.cpp.o -o unranked  -lcurses /usr/lib/x86_64-linux-gnu/libform.so 
