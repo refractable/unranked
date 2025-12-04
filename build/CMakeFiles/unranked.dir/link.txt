@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/unranked.dir/src/main.cpp.o -o unranked  -lcurses /usr/lib/x86_64-linux-gnu/libform.so 
+/usr/bin/c++ CMakeFiles/unranked.dir/src/main.cpp.o CMakeFiles/unranked.dir/src/player.cpp.o CMakeFiles/unranked.dir/src/names.cpp.o -o unranked  -lcurses /usr/lib/x86_64-linux-gnu/libform.so 

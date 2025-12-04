@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/refract/unranked/src/main.cpp" "CMakeFiles/unranked.dir/src/main.cpp.o" "gcc" "CMakeFiles/unranked.dir/src/main.cpp.o.d"
+  "/home/refract/unranked/src/names.cpp" "CMakeFiles/unranked.dir/src/names.cpp.o" "gcc" "CMakeFiles/unranked.dir/src/names.cpp.o.d"
+  "/home/refract/unranked/src/player.cpp" "CMakeFiles/unranked.dir/src/player.cpp.o" "gcc" "CMakeFiles/unranked.dir/src/player.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

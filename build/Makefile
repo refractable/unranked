@@ -153,6 +153,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unranked.dir/build.make CMakeFiles/unranked.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/names.o: src/names.cpp.o
+.PHONY : src/names.o
+
+# target to build an object file
+src/names.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unranked.dir/build.make CMakeFiles/unranked.dir/src/names.cpp.o
+.PHONY : src/names.cpp.o
+
+src/names.i: src/names.cpp.i
+.PHONY : src/names.i
+
+# target to preprocess a source file
+src/names.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unranked.dir/build.make CMakeFiles/unranked.dir/src/names.cpp.i
+.PHONY : src/names.cpp.i
+
+src/names.s: src/names.cpp.s
+.PHONY : src/names.s
+
+# target to generate assembly for a file
+src/names.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unranked.dir/build.make CMakeFiles/unranked.dir/src/names.cpp.s
+.PHONY : src/names.cpp.s
+
+src/player.o: src/player.cpp.o
+.PHONY : src/player.o
+
+# target to build an object file
+src/player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unranked.dir/build.make CMakeFiles/unranked.dir/src/player.cpp.o
+.PHONY : src/player.cpp.o
+
+src/player.i: src/player.cpp.i
+.PHONY : src/player.i
+
+# target to preprocess a source file
+src/player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unranked.dir/build.make CMakeFiles/unranked.dir/src/player.cpp.i
+.PHONY : src/player.cpp.i
+
+src/player.s: src/player.cpp.s
+.PHONY : src/player.s
+
+# target to generate assembly for a file
+src/player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unranked.dir/build.make CMakeFiles/unranked.dir/src/player.cpp.s
+.PHONY : src/player.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +213,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/names.o"
+	@echo "... src/names.i"
+	@echo "... src/names.s"
+	@echo "... src/player.o"
+	@echo "... src/player.i"
+	@echo "... src/player.s"
 .PHONY : help
 
 

@@ -9,6 +9,8 @@ find_package(Curses REQUIRED)
 
 set (SOURCES
     src/main.cpp
+    src/player.cpp
+    src/names.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

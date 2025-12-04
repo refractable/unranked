@@ -81,12 +81,12 @@ clean: CMakeFiles/unranked.dir/clean
 CMakeFiles/unranked.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unranked.dir/build.make CMakeFiles/unranked.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unranked.dir/build.make CMakeFiles/unranked.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/refract/unranked/build/CMakeFiles --progress-num=1,2 "Built target unranked"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/refract/unranked/build/CMakeFiles --progress-num=1,2,3,4 "Built target unranked"
 .PHONY : CMakeFiles/unranked.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/unranked.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/refract/unranked/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/refract/unranked/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/unranked.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/refract/unranked/build/CMakeFiles 0
 .PHONY : CMakeFiles/unranked.dir/rule

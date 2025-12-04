@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/unranked.dir/src/main.cpp.o"
   "CMakeFiles/unranked.dir/src/main.cpp.o.d"
+  "CMakeFiles/unranked.dir/src/names.cpp.o"
+  "CMakeFiles/unranked.dir/src/names.cpp.o.d"
+  "CMakeFiles/unranked.dir/src/player.cpp.o"
+  "CMakeFiles/unranked.dir/src/player.cpp.o.d"
   "unranked"
   "unranked.pdb"
 )
