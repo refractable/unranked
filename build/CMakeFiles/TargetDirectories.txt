@@ -1,3 +1,0 @@
-/home/refract/unranked/build/CMakeFiles/unranked.dir
-/home/refract/unranked/build/CMakeFiles/edit_cache.dir
-/home/refract/unranked/build/CMakeFiles/rebuild_cache.dir
