@@ -3,23 +3,52 @@
 
 #include <ncurses.h>
 
-#include "names.h"  // NOLINT(build/include_subdir)
+#include "names.h"   // NOLINT(build/include_subdir)
 #include "player.h"  // NOLINT(build/include_subdir)
+#include "team.h"    // NOLINT(build/include_subdir)
 
-void display_player(int row, const Player& p) {
-  mvprintw(row, 0, "%-20s %s %s  OVR:%2d  SPD:%2d STR:%2d VRT:%2d",
-           p.full_name().c_str(), p.position_str().c_str(),
+void display_player_row(int row, int num, const Player& p) {
+  mvprintw(row, 0,
+           "%2d. %-18s %s %-2s  OVR: %2d  "
+           "SPD:%2d STR%2d 3PT:%2d FIN:%2d HND:%2d REB:%2d",
+           num, p.full_name().c_str(), p.position_str().c_str(),
            p.year_str().c_str(), p.overall, p.attrs.speed, p.attrs.strength,
-           p.attrs.vertical);
+           p.attrs.three_point, p.attrs.finishing, p.attrs.handles,
+           p.attrs.rebounding);
+}
 
-  mvprintw(
-      row + 1, 2, "3PT:%2d MID:%2d FIN:%2d HND:%2d PAS: %2d PST:%2d REB:%2d",
-      p.attrs.three_point, p.attrs.mid_range, p.attrs.finishing,
-      p.attrs.handles, p.attrs.passing, p.attrs.post_game, p.attrs.rebounding);
+void display_team(const Team& t) {
+  mvprintw(0, 0, "UNRANKED - Team generation testing");
+  mvprintw(1, 0, "-----------------------------------");
 
-  mvprintw(row + 2, 2, "PER:%2d INT:%2d IQ:%2d CLU:%2d STA:%2d POT:%2d",
-           p.attrs.perimeter_d, p.attrs.interior_d, p.attrs.iq, p.attrs.clutch,
-           p.attrs.stamina, p.attrs.potential);
+  // team info
+  mvprintw(3, 0, "%s", t.full_name().c_str());
+  mvprintw(4, 0, "Location: %s", t.location.c_str());
+  mvprintw(5, 0, "Prestige: %d  Facilities: %d  Budget: %d", t.prestige,
+           t.facilities, t.budget);
+  mvprintw(6, 0, "Roster average: %d OVR", t.average_overall());
+
+  // Roster
+  mvprintw(8, 0,
+           "  %-18s %-2s %-2s %-6s  "
+           "%-6s %-6s %-6s %-6s %-6s %-6s",
+           "NAME", "POS", "YR", "OVR", "SPD", "STR", "3PT", "FIN", "HND",
+           "REB");
+  mvprintw(9, 0,
+           "------------------------------------------"
+           "-----------------------------------");
+  int row = 10;
+  int num = 1;
+  for (const auto& p : t.roster) {
+    display_player_row(row, num, p);
+    row++;
+    num++;
+  }
+  // Position
+  auto counts = t.position_counts();
+  mvprintw(row + 1, 0, "Position counts: PG:%d, SG:%d, SF:%d, PF:%d, C:%d",
+           counts[0], counts[1], counts[2], counts[3], counts[4]);
+  mvprintw(row + 3, 0, "Press any key to exit...");
 }
 
 int main() {
@@ -32,21 +61,9 @@ int main() {
   noecho();
   keypad(stdscr, TRUE);
 
-  // Title
-  mvprintw(0, 0, "UNRANKED - generating players test");
-  mvprintw(1, 0, "-----------------------------------");
-  mvprintw(3, 0, "Generating 5 random players (3 star talent):");
-  mvprintw(4, 0, "---------------------------------------------");
+  Team team = generate_team(3, ConferenceTier::Power);
 
-  // Generate and display players
-  int row = 6;
-  for (int i = 0; i < 5; i++) {
-    Player p = generate_random_player(3);
-    display_player(row, p);
-    row += 4;
-  }
-
-  mvprintw(row + 1, 0, "Press any key to exit...");
+  display_team(team);
 
   refresh();
   getch();

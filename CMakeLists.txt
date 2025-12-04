@@ -11,6 +11,7 @@ set (SOURCES
     src/main.cpp
     src/player.cpp
     src/names.cpp
+    src/team.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
